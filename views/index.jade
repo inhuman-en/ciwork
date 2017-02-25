@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  each post, index in posts
+    h2= post.title
+    p= post.text
+    p created: #{post.dateCreated}
+    p modified: #{post.dateModified}

@@ -1,0 +1,11 @@
++ create Post model with mongoose
++ configure db seed at app start
+
+-- add frontend
+    -- fetch polyfill
+    -- promise polyfill
+    -- single app.js script
+
+    -- bootstrap
+
+-- add gruntfile
