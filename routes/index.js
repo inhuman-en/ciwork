@@ -4,17 +4,7 @@ var Post = require('../api/post/post.model');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  Post.find({}, function (err, posts) {
-
-      if (err) {
-          return handleError(res, err);
-      }
-
-      console.log(posts);
-
-      res.render('index', { title: 'Blog!', posts: posts });
-  });  
+  res.render('index', { title: 'Blog!'});
 });
 
 module.exports = router;

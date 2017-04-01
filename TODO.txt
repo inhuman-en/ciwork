@@ -2,9 +2,8 @@
 + configure db seed at app start
 
 -- add frontend
-    -- fetch polyfill
-    -- promise polyfill
-    -- single app.js script
+    + fetch polyfill
+    + single app.js script
 
     -- bootstrap
 

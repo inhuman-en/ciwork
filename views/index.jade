@@ -1,11 +1,21 @@
 extends layout
 
+block templates
+  template#mytemplate
+    h2.title
+    p.text
+    p.created
+    p.modified
+
+block scripts
+  script(type="text/javascript" src="js/fetch.js")
+  script(type="text/javascript" src="js/main.js")
+
 block content
   h1= title
   p Welcome to #{title}
 
-  each post, index in posts
-    h2= post.title
-    p= post.text
-    p created: #{post.dateCreated}
-    p modified: #{post.dateModified}
+  input(type='button', id='loadBtn', value="Load posts")
+
+  section#blogContent
+

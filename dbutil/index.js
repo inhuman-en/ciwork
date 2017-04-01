@@ -23,7 +23,13 @@ module.exports = {
         console.log('seeding db..');
 
         Post.find({}).remove(function() {
-            Post.create(posts);
+            Post.create(posts, function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("seed done!");
+                }
+            });
         });
     }
 }
