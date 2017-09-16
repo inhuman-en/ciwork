@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "views",
+    "public"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json jade",
+  "delay": 3
+}

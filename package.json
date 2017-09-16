@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "live": "set NODE_ENV=development&nodemon ./bin/www",
+    "db": "mongod --dbpath=D:\\db",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
@@ -17,6 +19,7 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
     "serve-favicon": "~2.3.2",
+    "socket.io": "^1.7.3",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -25,6 +28,7 @@
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-ie-launcher": "^1.0.0",
-    "karma-jasmine": "^1.1.0"
+    "karma-jasmine": "^1.1.0",
+    "nodemon": "^1.11.0"
   }
 }

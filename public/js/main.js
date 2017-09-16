@@ -1,5 +1,8 @@
 window.onload = function () {
     "use strict";
+    var content = document.querySelector("#blogContent"),
+        loadBtn = document.querySelector("#loadBtn");
+
 
     function showPosts(posts) {
         var postsHtml = document.createDocumentFragment();
@@ -13,14 +16,18 @@ window.onload = function () {
             clone.querySelector('.created').innerText = post.dateCreated;
             clone.querySelector('.modified').innerText = post.dateModified;
 
-            postsHtml.appendChild(clone)
+            postsHtml.appendChild(clone);
         });
 
-        document.querySelector("#blogContent").appendChild(postsHtml);
+        content.innerHTML = "";
+        content.appendChild(postsHtml);
     }
 
-    fetch("/posts")
+    loadBtn.addEventListener("click", function () {
+        fetch("/posts")
         .then(function(response) { return response.json() })
         .then(showPosts)
         .catch(function (e) { console.error(e) });
+    })
 }
+

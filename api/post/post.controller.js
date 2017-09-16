@@ -8,9 +8,27 @@ exports.index = function (req, res) {
             return handleError(res, err);
         }
 
-        console.log(posts);
+        console.log(`found ${posts.length} posts`);
 
         res.status(200).json(posts);
+    });
+};
+
+//Stream lists of posts
+exports.stream = function (req, res) {
+
+    var postsStream = Post.find({}).stream();
+    var count = 0;
+
+    postsStream.on('data', function (chunk) {
+        //send to cliabt via socket
+        console.log(`chunk received ${++count}`);
+    }).on('error', function (err) {
+        console.log(`error in posts stream`);
+    }).on('close', function () {
+        console.log(`posts stream closed`);
+
+        res.status(200).end();
     });
 };
 
